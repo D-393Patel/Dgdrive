@@ -1,0 +1,40 @@
+we use react for frontend and solidity for blockchain for preparing smart contract and we use pinnata through it we store using image url in our smart url 
+prequisitie
+basic react
+ether.js
+hardhat
+solidity
+ipfs
+few data variables  mapping with array(mapping(address=>string[])value;) for mapping image url in ifs (dynamic)
+mapping list of all the accessed users ex:@qwerty has given access to @abc,@err,@gfd will be maintained in this access list 
+
+mapping(address ->Acess[])accessList;
+nested mapping ownershipvariable
+also related to accessownership of the users 
+mapping(address=>mapping(address=>bool))ownership
+
+smart contract 
+contract Upload{
+    //@xqwerty
+    struct Access{
+    address user;
+    bool access;
+    }
+    mapping(address=>string[])value;
+    mapping(address=>mapping(address=>bool))ownership;
+    mapping(address=>Acess[])accessList;
+    mapping(address=>mapping(address=>bool))previousData;
+
+    function add(address _user,string memory url)external{
+        value[_user].push(url);
+    }
+    function allow(addres user)external{
+        ownership(msg.sender)[user]=true;
+        accessList[msg.sender].push(Access(user,true));
+    }
+    function disallow(address user)public{
+        ownership[msg.sender][user]=false;
+        f
+    }
+}
+
